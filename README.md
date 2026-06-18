@@ -46,5 +46,5 @@ Authorization: <token>
 Swagger UI disponible en `/docs`
 
 ## Producción
-- API: [COMPLETAR CON URL DE RAILWAY]
-- Docs: [COMPLETAR CON URL DE RAILWAY]/docs
+- API: https://web-production-6dfd0.up.railway.app
+- Docs: https://web-production-6dfd0.up.railway.app/docs
