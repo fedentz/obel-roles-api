@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, Post } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { UsersService } from './users.service';
+import { AssignRoleDto } from './dto/assign-role.dto';
 
 @ApiTags('users')
 @ApiBearerAuth('Authorization')
@@ -12,8 +13,8 @@ export class UsersController {
   @ApiOperation({ summary: 'Asignar un role a un usuario' })
   @ApiResponse({ status: 201, description: 'Role asignado' })
   @ApiResponse({ status: 404, description: 'Usuario o role no encontrado' })
-  assignRole(@Param('id') id: string, @Body('roleId') roleId: string) {
-    return this.usersService.assignRole(id, roleId);
+  assignRole(@Param('id') id: string, @Body() dto: AssignRoleDto) {
+    return this.usersService.assignRole(id, dto.roleId);
   }
 
   @Delete(':id/roles/:roleId')
